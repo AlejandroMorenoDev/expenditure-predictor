@@ -104,29 +104,3 @@ def show_correlation(X):
     plt.figure(figsize=(27, 8))
     sns.heatmap(correlation, annot=True, linewidths=0, vmin=-0.75, vmax=0.75, cmap="RdBu_r")
     plt.show()
-
-
-def show_pca(features):
-    pca = PCA()
-    pca.fit(features)
-    pca_result = pca.transform(features)
-    per_var = np.round(pca.explained_variance_ratio_ * 100, decimals=3)
-    labels = ['PC' + str(x) for x in range(1, len(per_var) + 1)]
-    plt.bar(x=range(1, len(per_var) + 1), height=per_var, tick_label=labels)
-    plt.ylabel('Porcentaje de Varianza Explicada')
-    plt.xlabel('Componente Principal')
-    plt.title('Gráfica')
-    plt.show()
-    loading_scores = pd.Series(pca.components_[0], index=features.columns)
-    sorted_loading_scores = loading_scores.abs().sort_values(ascending=False)
-    print(sorted_loading_scores)
-    top_10_variables = sorted_loading_scores[0:10].index
-    print(top_10_variables)
-    pca_df = pd.DataFrame(pca_result, index=features.index, columns=labels)
-    plt.scatter(pca_df.PC1, pca_df.PC2)
-    plt.title('Gráfico PCA')
-    plt.xlabel('PC1 - {0}%'.format(per_var[0]))
-    plt.ylabel('PC2 - {0}%'.format(per_var[1]))
-    plt.show()
-    for title in pca_df.columns:
-        plt.annotate(title, (pca_df.PC1.loc[title], pca_df.PC2.loc[title]))
