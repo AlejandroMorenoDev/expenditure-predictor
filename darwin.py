@@ -126,9 +126,11 @@ def mutate(model):
 
     # Muta el learning rate del modelo pasado por parámetro.
 
-    # Atributos:
+    # Parámetros:
     #       model (Sequential): Modelo de red que se va a mutar.
 
+    # Devuelve:
+    #       model (Sequential): Modelo de red con la mutación aplicada.
 
     kb.set_value(model.optimizer.lr, rd.randrange(1, 300) / 1000)
     return model
@@ -145,6 +147,10 @@ def natural_selection(subjects, train_dataset, train_labels, test_dataset, test_
     #       test_dataset (DataFrame): DataFrame con las variables predictoras del conjunto de validación.
     #       test_labels (Series): Objeto Series de pandas con la variable objetivo de la validación.
     #       generations (int): Valor entero con el número de generaciones a ejecutar.
+    
+    # Devuelve:
+    #       best_model (Sequential): Mejor modelo diseñado hasta el momento.
+    #       best_score (float): Valor con el coeficiente de determinación del mejor modelo
 
     global best_score
     global best_model
