@@ -2,7 +2,7 @@
 
 ## Red neuronal basada en deep learning para la predicción del gasto turístico en Canarias y clusterización de turistas en Canarias a través de PCA y K-Means
 
-El modelo de red resultante se encuentra en el fichero modelo_predictivo.h5
+El modelo de red resultante se encuentra exportado en el fichero modelo_predictivo.h5
 
 En la carpeta notebooks podemos encontrar todas las ejecuciones utilizando los módulos desarrollados.
 
