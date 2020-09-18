@@ -1,6 +1,6 @@
 # expenditure-predictor
 
-## Red neuronal para la predicción del gasto turístico en Canarias y clusterización de turistas en Canarias
+## Red neuronal basada en deep learning para la predicción del gasto turístico en Canarias y clusterización de turistas en Canarias a través de PCA y K-Means
 
 En la carpeta notebooks podemos encontrar todas las ejecuciones utilizando los módulos desarrollados.
 
